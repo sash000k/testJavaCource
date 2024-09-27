@@ -3,16 +3,11 @@ package org.example;
 public class Main {
     public static void Calculation(String[][] data){
         int[][] temp = new int[4][4];
-        int lenX = data.length;
+        int lenX = Math.max(temp.length, data.length);
         int lenY = data[0].length;
-        if(temp.length<data.length){
-            lenX = data.length;
-        } else {lenX = temp.length;}
         try{
             for (int x = 0; x < lenX; x++){
-                if(temp[x].length<data[x].length){
-                    lenY = data[x].length;
-                } else {lenY = temp[x].length;}
+                lenY = Math.max(temp[x].length, data[x].length);
             }
             for (int i = 0; i < lenX; i++) {
                 for (int j = 0; j < lenY; j++){
